@@ -174,6 +174,7 @@ class Linebot {
 	public function getGroupId(){
 		$webhook = $this->webhookEventObject;
 		$groupId = $webhook->{"originalDetectIntentRequest"}->{"payload"}->{"data"}->{"source"}->{"groupId"}; 
+		file_put_contents('log.txt', $groupId . PHP_EOL, FILE_APPEND);
 		return $groupId;
 	}	
 	
