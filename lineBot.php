@@ -156,24 +156,24 @@ class Linebot {
 	//->{"originalDetectIntentRequest"}[0]->{"payload"}[0]->{"data"}[0]
 	public function getMessageText(){
 		$webhook = $this->webhookEventObject;
-		$messageText = $webhook->{"originalDetectIntentRequest"}[0]->{"payload"}[0]->{"data"}[0]->{"message"}->{"text"}; 
+		$messageText = $webhook->{"originalDetectIntentRequest"}->{"payload"}->{"data"}->{"message"}->{"text"}; 
 		return $messageText;
 	}
 	
 	public function postbackEvent(){
 		$webhook = $this->webhookEventObject;
-		$postback = $webhook->{"originalDetectIntentRequest"}[0]->{"payload"}[0]->{"data"}[0]->{"postback"}->{"data"}; 
+		$postback = $webhook->{"originalDetectIntentRequest"}->{"payload"}->{"data"}->{"postback"}->{"data"}; 
 		return $postback;
 	}
 	
 	public function getUserId(){
 		$webhook = $this->webhookEventObject;
-		$userId = $webhook->{"originalDetectIntentRequest"}[0]->{"payload"}[0]->{"data"}[0]->{"source"}->{"userId"}; 
+		$userId = $webhook->{"originalDetectIntentRequest"}->{"payload"}->{"data"}->{"source"}->{"userId"}; 
 		return $userId;
 	}
 	public function getGroupId(){
 		$webhook = $this->webhookEventObject;
-		$groupId = $webhook->{"originalDetectIntentRequest"}[0]->{"payload"}[0]->{"data"}[0]->{"source"}->{"groupId"}; 
+		$groupId = $webhook->{"originalDetectIntentRequest"}->{"payload"}->{"data"}->{"source"}->{"groupId"}; 
 		return $groupId;
 	}	
 	
