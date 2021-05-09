@@ -132,6 +132,9 @@ class Linebot {
 	
 	public function getMessageText(){
 		$webhook = $this->webhookEventObject;
+		
+		//$webhook = $webhook->
+			
 		$messageText = $webhook->{"events"}[0]->{"message"}->{"text"}; 
 		return $messageText;
 	}
