@@ -42,7 +42,8 @@ class Linebot {
 	public function reply($text){
 		$api = $this->apiReply;
 		$webhook = $this->webhookEventObject;
-		$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
+		//$replyToken = $webhook->{"events"}[0]->{"replyToken"}; 
+		$replyToken = $webhook->{"originalDetectIntentRequest"}->{"payload"}->{"data"}->{"replyToken"}; 
 		$body["replyToken"] = $replyToken;
 		$body["messages"][0] = array(
 			"type" => "text",
